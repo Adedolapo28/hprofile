@@ -18,22 +18,22 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
-          java-version: '11'
+          java-version: '17'
       
     # Setup sonar-scanner
       - name: Setup SonarQube
         uses: warchant/setup-sonar-scanner@v7  
     # Run sonar-scanner
-      - name: SonarQube Scan \
-        run: sonar-scanner \
-          -Dsonar.host.url=https://sonarcloud.io/ \
-          -Dsonar.login=5e34b2a83dc3c7b12e8e4e4099da1ba40af19a68 \
-          -Dsonar.organization=hprofile45 \
-          -Dsonar.projectKey=actioncode \
-          -Dsonar.sources=src/ \
-          -Dsonar.junit.reportsPath=target/surefire-reports/ \
-          -Dsonar.jacoco.reportsPath=target/jacoco.exec \
-          -Dsonar.java.checkstyle.reportPaths=target/checkstyle-result.xml \
+      - name: SonarQube Scan
+        run: sonar-scanner
+          -Dsonar.host.url=https://sonarcloud.io/
+          -Dsonar.login=5e34b2a83dc3c7b12e8e4e4099da1ba40af19a68
+          -Dsonar.organization=hprofile45
+          -Dsonar.projectKey=actioncode
+          -Dsonar.sources=src/
+          -Dsonar.junit.reportsPath=target/surefire-reports/
+          -Dsonar.jacoco.reportsPath=target/jacoco.exec
+          -Dsonar.java.checkstyle.reportPaths=target/checkstyle-result.xml
           -Dsonar.java.binaries=target/test-classes/com/visualpathit/account/controllerTest/
 
       
