@@ -27,7 +27,7 @@ jobs:
       - name: SonarQube Scan
         run: sonar-scanner
           -Dsonar.host.url=https://sonarcloud.io/
-          -Dsonar.login=5e34b2a83dc3c7b12e8e4e4099da1ba40af19a68
+          -Dsonar.login=ab9934b4269d1435acfd2e6400b287c3fb2473df
           -Dsonar.organization=hprofile45
           -Dsonar.projectKey=actioncode
           -Dsonar.sources=src/
