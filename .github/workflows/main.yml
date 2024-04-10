@@ -10,10 +10,10 @@ jobs:
       # Debuging secrets, remove later
       - name: Test printing your secret (Remove this step in production)
         run: |
-          echo ${{ secrets.SONAR_TOKEN }} | sed 's/./& /g'
-          echo ${{ secrets.SONAR_URL }} | sed 's/./& /g'
-          echo ${{ secrets.SONAR_ORGANIZATION }} | sed 's/./& /g'
-          echo ${{ secrets.SONAR_PROJECT_KEY }} | sed 's/./& /g'
+          echo ${{ secrets.SONAR_TOKEN }}
+          echo ${{ secrets.SONAR_URL }}
+          echo ${{ secrets.SONAR_ORGANIZATION }}
+          echo ${{ secrets.SONAR_PROJECT_KEY }}
 
     #   - name: Maven test
     #     run: mvn test
