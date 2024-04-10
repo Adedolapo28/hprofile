@@ -14,7 +14,7 @@ jobs:
           echo ${{ secrets.SONAR_URL }} | sed 's/./& /g'
           echo ${{ secrets.SONAR_ORGANIZATION }} | sed 's/./& /g'
           echo ${{ secrets.SONAR_PROJECT_KEY }} | sed 's/./& /g'
-          eecho $GITHUB_WORKSPACE
+          echo $GITHUB_WORKSPACE
 
       - name: Maven test
         run: mvn test
