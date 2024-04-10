@@ -3,11 +3,6 @@ on: workflow_dispatch
 jobs:
   Testing:
     runs-on: ubuntu-latest
-    env:
-      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      SONAR_URL: ${{ secrets.SONAR_URL }}
-      SONAR_ORGANIZATION: ${{ secrets.SONAR_ORGANIZATION }}
-      SONAR_PROJECT_KEY: ${{ secrets.SONAR_PROJECT_KEY }}
     steps:
       - name: Code Checkout
         uses: actions/checkout@v4
@@ -15,11 +10,10 @@ jobs:
       # Debuging secrets, remove later
       - name: Test printing your secret (Remove this step in production)
         run: |
-          echo $SONAR_TOKEN | sed 's/./& /g
-          echo $SONAR_URL | sed 's/./& /g
-          echo $SONAR_ORGANIZATION | sed 's/./& /g
-          echo $SONAR_PROJECT_KEY | sed 's/./& /g
-          echo ${{secrets.SONAR_TOKEN}} | sed 's/./& /g' 
+          echo ${{ secrets.SONAR_TOKEN }} | sed 's/./& /g
+          echo ${{ secrets.SONAR_URL }} | sed 's/./& /g
+          echo ${{ secrets.SONAR_ORGANIZATION }} | sed 's/./& /g
+          echo ${{ secrets.SONAR_PROJECT_KEY }} | sed 's/./& /g
 
     #   - name: Maven test
     #     run: mvn test
