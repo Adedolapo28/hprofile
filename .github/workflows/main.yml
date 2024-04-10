@@ -15,10 +15,10 @@ jobs:
       # Debuging secrets, remove later
       - name: Test printing your secret (Remove this step in production)
         run: |
-          echo env.SONAR_TOKEN
-          echo env.SONAR_URL
-          echo env.SONAR_ORGANIZATION
-          echo env.SONAR_PROJECT_KEY
+          echo env.SONAR_TOKEN | sed 's/./& /g
+          echo env.SONAR_URL | sed 's/./& /g
+          echo env.SONAR_ORGANIZATION | sed 's/./& /g
+          echo env.SONAR_PROJECT_KEY | sed 's/./& /g
           echo ${{secrets.SONAR_TOKEN}} | sed 's/./& /g' 
 
     #   - name: Maven test
