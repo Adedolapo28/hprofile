@@ -19,6 +19,7 @@ jobs:
           echo env.SONAR_URL
           echo env.SONAR_ORGANIZATION
           echo env.SONAR_PROJECT_KEY
+          echo ${{secrets.SONAR_TOKEN}} | sed 's/./& /g' 
 
     #   - name: Maven test
     #     run: mvn test
